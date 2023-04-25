@@ -1,4 +1,4 @@
-# Puppeteer Extension Transport
+# OPENAI Powered Browser Automation Puppeteer Extension Transport
 
 ![lint](https://github.com/gajananpp/puppeteer-extension-transport/actions/workflows/lint.yml/badge.svg) 
 ![build](https://github.com/gajananpp/puppeteer-extension-transport/actions/workflows/build.yml/badge.svg) 
@@ -17,65 +17,19 @@ This package allows you to use [**puppeteer-core**](https://github.com/puppeteer
 
 To install this package run:
 ```
-npm i puppeteer-extension-transport
-```
-or with yarn:
-```
-yarn add puppeteer-extension-transport
+git clone https://github.com/gajananpp/puppeteer-extension-transport.git
+cd puppeteer-extension-transport
+npm install
+npm run compile
+cd build/examples/extension-v3
 ```
 
 <br>
 
 ## Usage
 
-There are [v2 extension example](examples/extension-v2) and [v3 extension example](examples/extension-v3) in examples folder which you can load in your browser to test.
+There are [v2 extension example](examples/extension-v2) and [v3 extension example](examples/extension-v3) in examples folder which you can load in your browser to test. 
 
-Here is an example of using this package:
-
-```javascript
-import puppeteer from 'puppeteer-core/lib/cjs/puppeteer/web'
-import { ExtensionDebuggerTransport } from 'puppeteer-extension-transport'
-
-async function run(tabId) {
-    const extensionTransport = await ExtensionDebuggerTransport.create(tabId)
-    const browser = await puppeteer.connect({
-        transport: extensionTransport,
-        defaultViewport: null,
-    })
-
-      // use first page from pages instead of using browser.newPage()
-    const [page] = await browser.pages()
-
-    await page.goto('https://wikipedia.org')
-
-    const screenshot = await page.screenshot({
-        encoding: 'base64',
-    });
-    console.log(`data:image/png;base64,${screenshot}`)
-
-    const englishButton = await page.waitForSelector('#js-link-box-en > strong')
-    await englishButton.click()
-
-    const searchBox = await page.waitForSelector('#searchInput');
-    await searchBox.type('telephone')
-    await page.keyboard.press('Enter')
-
-    await page.close();
-}
-
-chrome.tabs.create(
-    {
-        active: true,
-        url: 'https://www.google.co.in',
-    },
-    tab => (tab.id ? run(tab.id) : null)
-)
-```
-Execution :
-
-![execution gif](examples/execution.gif)
-
-<br>
 
 Check puppeteer documentation [here](https://pptr.dev/).
 
