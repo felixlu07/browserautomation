@@ -1,6 +1,6 @@
 # OpenAI Powered Browser Automation (Based on Puppeteer Extension Transport)
 
-The idea was inspired by Adept.ai where you could ask an interface a natural language question, OpenAI's would reply in a standardized way, and we could use that standardized format to plug in variable to accomplish browser automation.
+The idea was inspired by Adept.ai where you could ask an interface a natural language question, OpenAI's would reply in a standardized way, and we could use that standardized format to plug in variables to accomplish browser automation.
 
 E.g. I want to go to Korea. 
 
