@@ -1,0 +1,33 @@
+{
+    "name": "Puppeteer Extension Example v3",
+    "version": "0.0.0.1",
+    "description": "Example extension which uses puppeteer-extension-transport",
+    "permissions": [
+        "tabs",
+        "debugger",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "96": "images/icon-96.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "test": {
+            "suggested_key": {
+                "default": "Alt+E"
+            },
+            "description": "for testing puppeteer-extension-transport"
+        }
+    },
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
