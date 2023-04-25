@@ -27,9 +27,13 @@ This package allows you to use [**puppeteer-core**](https://github.com/puppeteer
 To install this package run:
 ```
 git clone https://github.com/felixlu07/browserautomation.git
+
 cd browserautomation
+
 npm install
+
 npm run compile
+
 cd build/examples/extension-v3
 ```
 
