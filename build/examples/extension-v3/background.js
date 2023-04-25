@@ -77,7 +77,7 @@ chrome.runtime.onMessage.addListener(function (request) {
     return __awaiter(this, void 0, void 0, function* () {
         if (request.input) {
             // let apiKey = await new Promise(resolve => chrome.storage.local.get(['apiKey'], result => resolve(result.apiKey)));
-            let apiKey = "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";
+            let apiKey = "YOUR_API_KEY_HERE";
             // let apiModel = await new Promise(resolve => chrome.storage.local.get(['apiModel'], result => resolve(result.apiModel)));
             let apiModel = "gpt-3.5-turbo";
             // payload format to append to messageArray
