@@ -67,7 +67,7 @@ No. This package internally uses `chrome.debugger` api to communicate with chrom
 <br>
 You will atleast need to specify below in manifest.json:
 ```json
-"permissions": ["debugger"]
+"permissions": ["debugger","storage"]
 ```
 Check example [v2 manifest.json](examples/extension-v2/manifest.json) or [v3 manifest.json](examples/extension-v3/manifest.json) 
 
